@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6eee9">
+<title>20/10 · Gửi một bạn nữ tuyệt vời</title>
+<style>
+:root{--paper:#fffaf4;--ink:#563e43;--rose:#a94e66;--muted:#927a7c}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:#f6eee9;font-family:Arial,sans-serif;min-height:100svh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23ad8f80' opacity='.17' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+main{width:min(100% - 32px,1040px);margin:auto;padding:26px 0}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--rose);margin-right:7px}
+.card{position:relative;overflow:hidden;background:var(--paper);border:1px solid #e5d9cf;border-radius:160px 160px 14px 14px;box-shadow:0 20px 65px #7045390c;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:70px 62px 54px;min-height:650px}
+.card:before{content:"";position:absolute;inset:12px;border:1px solid #e8dcd1;border-radius:149px 149px 6px 6px;pointer-events:none}
+.visual{position:relative;text-align:center}
+.date{font-family:Georgia,serif;font-size:95px;font-weight:400;letter-spacing:-7px;color:#ead6d3;margin:0;line-height:1}
+.date span{font-size:48px;vertical-align:12px;margin:0 8px}
+.flower{width:100%;max-width:360px;height:340px;overflow:visible;filter:drop-shadow(0 12px 12px #854c5212);animation:sway 7s ease-in-out infinite;transform-origin:50% 90%}
+.caption{font-family:Georgia,serif;font-style:italic;color:var(--muted);font-size:15px;margin-top:0}
+.copy{padding-left:35px;position:relative}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:12px}
+.eyebrow:before{content:"";width:27px;height:1px;background:#c69a9d}
+h1{font-family:"Palatino Linotype","Book Antiqua",Palatino,serif;font-weight:400;font-size:57px;line-height:1.3;letter-spacing:-1px;margin:24px 0}h1 em{color:var(--rose);font-weight:400}
+.description{font-size:14px;line-height:1.9;color:#8a7276;max-width:290px}
+button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.open{margin-top:20px;border:0;background:var(--rose);color:#fff9f3;border-radius:50px;padding:17px 24px;font-size:13px;display:inline-flex;gap:25px;align-items:center;box-shadow:0 8px 20px #a94e6620;transition:transform .2s,background .2s}
+.open:hover{transform:translateY(-3px);background:#923e55}
+button:focus-visible{outline:3px solid #c89867;outline-offset:5px}
+.note{font-size:10px;color:#aa9190;margin-top:18px;letter-spacing:.3px}
+.bottom{display:flex;justify-content:space-between;gap:12px;margin:21px 6px 0;color:#9c8583;font-size:10px;letter-spacing:.7px}
+.star{position:absolute;color:#c89b73;font-size:23px}
+.s1{top:120px;left:34px}.s2{right:25px;top:220px;font-size:16px}
+dialog{border:1px solid #e4cec8;background:#fffaf4;color:var(--ink);border-radius:24px;width:min(90vw,470px);padding:42px 30px;text-align:center;box-shadow:0 35px 100px #422b3d30;max-height:85svh;overflow:auto}
+dialog::backdrop{background:#48303d65;backdrop-filter:blur(7px)}
+.close{position:absolute;top:13px;right:14px;border:0;background:transparent;font-size:24px;color:var(--muted);width:36px;height:36px}
+.letter-icon{font-size:31px;color:var(--rose)}
+dialog h2{font-family:Georgia,serif;font-size:33px;font-weight:400;line-height:1.2;margin:17px 0}
+dialog p{font-size:14px;line-height:1.95;color:#80686e}
+.signature{font-family:Georgia,serif;font-style:italic;font-size:18px!important;color:var(--rose)!important;margin-top:24px}
+.surprise{border:1px solid #dcbec0;border-radius:30px;background:transparent;padding:13px 20px;color:var(--rose);font-size:12px;margin-top:8px}
+.secret{min-height:46px;font-size:12px!important;margin-bottom:0}
+.petal{position:fixed;top:-30px;pointer-events:none;z-index:1000;width:12px;height:18px;background:#d897a6;border-radius:80% 0 80% 20%;animation:fall linear forwards}
+@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes fall{to{transform:translate(var(--drift),110vh) rotate(640deg);opacity:0}}
+@media(min-width:760px){main{padding-top:45px}.card{margin-top:30px}}
+@media(max-width:759px){
+main{width:min(100% - 28px,470px);padding:20px 0}
+.top{font-size:8px;letter-spacing:1.5px;margin:0 8px 19px}
+.card{display:flex;flex-direction:column;padding:33px 25px 33px;border-radius:170px 170px 14px 14px;min-height:0}
+.card:before{border-radius:160px 160px 6px 6px;inset:9px}
+.visual{width:100%}.date{font-size:72px;letter-spacing:-5px}.date span{font-size:36px;vertical-align:9px}
+.flower{height:230px;max-width:280px;margin-top:-9px}
+.caption{font-size:12px;margin:-3px 0 25px}
+.copy{padding:0;text-align:center;width:100%}
+.eyebrow{justify-content:center;font-size:8px;letter-spacing:2.4px}.eyebrow:before{width:20px}
+h1{font-size:43px;margin:17px 0 14px;letter-spacing:-1.5px}
+.description{font-size:12px;line-height:1.85;margin:0 auto;max-width:260px}
+.open{margin-top:21px;padding:15px 23px;font-size:12px}
+.note{font-size:9px;margin-bottom:0}.s1{top:80px;left:30px}.s2{top:145px;right:28px}
+.bottom{font-size:8px;margin-top:18px;letter-spacing:.2px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.petal{display:none}}
+</style>
+</head>
+<body>
+<main>
+<header class="top"><span><i class="dot"></i>Một chút yêu thương</span><span>Vietnamese Women's Day</span></header>
+<article class="card">
+<section class="visual" aria-label="Bó hoa chúc mừng ngày 20 tháng 10">
+<p class="date">20<span>/</span>10</p>
+<span class="star s1" aria-hidden="true">✧</span><span class="star s2" aria-hidden="true">✧</span>
+<svg class="flower" viewBox="0 0 360 340" role="img" aria-label="Bó hoa hồng và hoa cúc được gói bằng giấy màu kem">
+<defs>
+<linearGradient id="wrap" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0dfce"/><stop offset="1" stop-color="#d9baa9"/></linearGradient>
+<radialGradient id="pink"><stop stop-color="#d48996"/><stop offset="1" stop-color="#eab6bb"/></radialGradient>
+<g id="leaf"><path d="M0 0Q-29-33-11-49Q15-30 0 0" fill="#8b9c7a"/><path d="M0 0L-10-42" stroke="#6d825e" fill="none"/></g>
+<g id="rose">
+<path d="M0 28C-38 26-43-9-22-19C-22-46 13-47 23-25C52-21 44 13 27 23C20 38 4 38 0 28" fill="url(#pink)"/>
+<path d="M-21-15Q0-32 21-15Q36 4 12 22Q-12 30-22 9Q-30-8-7-16Q11-21 17-5Q20 10 2 13Q-13 12-10 0Q-6-10 5-5" fill="none" stroke="#bd7383" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g id="daisy">
+<g fill="#fff9eb" stroke="#e9d6b9" stroke-width=".6">
+<ellipse ry="23" rx="8" cy="-17"/><ellipse ry="23" rx="8" cy="-17" transform="rotate(45)"/><ellipse ry="23" rx="8" cy="-17" transform="rotate(90)"/><ellipse ry="23" rx="8" cy="-17" transform="rotate(135)"/><ellipse ry="23" rx="8" cy="-17" transform="rotate(180)"/><ellipse ry="23" rx="8" cy="-17" transform="rotate(225)"/><ellipse ry="23" rx="8" cy="-17" transform="rotate(270)"/><ellipse ry="23" rx="8" cy="-17" transform="rotate(315)"/>
+</g><circle r="11" fill="#c89c53"/><circle r="6" fill="#ddba72"/>
+</g>
+</defs>
+<g stroke="#7d9169" stroke-width="3" fill="none">
+<path d="M177 288L110 84M181 285L220 56M180 287L269 130M178 285L164 76M177 285L78 139M179 285L244 96"/>
+</g>
+<use href="#leaf" transform="translate(139 168) rotate(-30)"/>
+<use href="#leaf" transform="translate(214 193) rotate(90)"/>
+<use href="#leaf" transform="translate(239 141) rotate(100)"/>
+<use href="#leaf" transform="translate(110 123) rotate(-40)"/>
+<use href="#leaf" transform="translate(201 103) rotate(35)"/>
+<use href="#leaf" transform="translate(165 150) rotate(-10)"/>
+<path d="M88 158L177 320L276 159L209 202L175 170L143 202Z" fill="url(#wrap)"/>
+<path d="M88 158L177 320L149 213Z" fill="#f3e6d6"/>
+<path d="M276 159L177 320L211 215Z" fill="#e6cdbb"/>
+<g fill="#f9f3e5"><circle cx="80" cy="104" r="4"/><circle cx="68" cy="118" r="4"/><circle cx="86" cy="129" r="4"/><circle cx="258" cy="71" r="4"/><circle cx="272" cy="89" r="4"/><circle cx="255" cy="97" r="4"/></g>
+<use href="#rose" transform="translate(118 102) rotate(-20) scale(.95)"/>
+<use href="#daisy" transform="translate(204 68) scale(.8)"/>
+<use href="#rose" transform="translate(236 125) rotate(20) scale(1.05)"/>
+<use href="#rose" transform="translate(171 145) rotate(8) scale(1.18)"/>
+<use href="#daisy" transform="translate(104 158) scale(.7)"/>
+<use href="#daisy" transform="translate(171 94) scale(.62)"/>
+<path d="M154 266Q179 275 204 264" stroke="#ad5a6c" stroke-width="8" fill="none"/>
+<path d="M180 270C132 231 124 275 177 274C223 237 235 278 182 273M178 274L158 309M182 274L207 302" fill="none" stroke="#ad5a6c" stroke-width="5" stroke-linecap="round"/>
+</svg>
+<p class="caption">Một bó hoa nhỏ, dành riêng cho bạn.</p>
+</section>
+<section class="copy">
+<div class="eyebrow">Gửi một người thật đặc biệt</div>
+<h1>Bạn xứng đáng<br>với những điều<br><em>dịu dàng nhất.</em></h1>
+<p class="description">Chúc mừng ngày 20/10, cô gái tuyệt vời!<br>Có một lời chúc nhỏ đang đợi bạn mở ra.</p>
+<button class="open" id="open">Mở lời chúc dành cho bạn <span aria-hidden="true">↗</span></button>
+<p class="note">Được gói bằng tất cả sự chân thành ♡</p>
+</section>
+</article>
+<footer class="bottom"><span>20 THÁNG 10 · NGÀY PHỤ NỮ VIỆT NAM</span><span>With a little love ♡</span></footer>
+</main>
+<dialog id="letter" aria-labelledby="letterTitle">
+<button class="close" id="close" aria-label="Đóng lời chúc">×</button>
+<div class="letter-icon" aria-hidden="true">♡</div>
+<div class="eyebrow" style="justify-content:center;margin-top:15px">Happy Women's Day</div>
+<h2 id="letterTitle">Gửi bạn,<br>một cô gái tuyệt vời.</h2>
+<p>Chúc bạn một ngày 20/10 thật nhiều niềm vui, được nhận những bông hoa xinh và những yêu thương chân thành.</p>
+<p>Mong bạn luôn tự tin với những điều mình chọn, đủ can đảm theo đuổi điều mình thích và đủ dịu dàng để yêu thương chính mình.</p>
+<p>Cảm ơn bạn vì đã mang đến cho thế giới này một sắc màu rất riêng. Dù hôm nay hay bất kỳ ngày nào, bạn cũng xứng đáng được trân trọng và hạnh phúc.</p>
+<p class="signature">Cứ rạng rỡ theo cách của bạn nhé!</p>
+<button class="surprise" id="surprise">Nhận thêm một chút yêu thương ✧</button>
+<p class="secret" id="secret" aria-live="polite"></p>
+</dialog>
+<script>
+const letter=document.getElementById('letter');
+const opener=document.getElementById('open');
+const messages=[
+'Bạn không cần hoàn hảo để trở nên đáng quý. ♡',
+'Mong những điều tốt đẹp sẽ tìm đến bạn, thật nhiều.',
+'Nụ cười của bạn làm một ngày bình thường trở nên đặc biệt.',
+'Hôm nay, nhớ dành cho bản thân một điều thật dễ thương nhé!',
+'Chúc bạn luôn được yêu thương theo cách khiến bạn thấy bình yên.'
+];
+let index=0;
+function flowers(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ for(let i=0;i<26;i++){
+  const petal=document.createElement('i');
+  petal.className='petal';
+  petal.style.left=Math.random()*100+'vw';
+  petal.style.setProperty('--drift',(Math.random()*180-90)+'px');
+  petal.style.animationDuration=(3+Math.random()*3)+'s';
+  petal.style.animationDelay=(Math.random()*.8)+'s';
+  petal.style.background=['#d897a6','#edbdc4','#d8b87d'][i%3];
+  document.body.appendChild(petal);
+  petal.addEventListener('animationend',()=>petal.remove());
+ }
+}
+opener.addEventListener('click',()=>{letter.showModal();flowers()});
+document.getElementById('close').addEventListener('click',()=>letter.close());
+letter.addEventListener('click',event=>{
+ if(event.target===letter){
+  const r=letter.getBoundingClientRect();
+  if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)letter.close();
+ }
+});
+letter.addEventListener('close',()=>opener.focus());
+document.getElementById('surprise').addEventListener('click',()=>{
+ document.getElementById('secret').textContent=messages[index++%messages.length];
+ flowers();
+});
+</script>
+</body>
+</html>
